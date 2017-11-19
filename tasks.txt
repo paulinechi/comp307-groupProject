@@ -1,0 +1,19 @@
+// 1
+// after user select certain location
+// send location to database, search under category and printout all results to new page
+// *** did we store resto location in the form?
+
+// 2
+// link login / register to Gael's page
+
+// 3
+// after written down their usr: name / email / (location - suggestion)
+//                          seller: location / daily manu
+//                          save info to database
+
+// 4
+// welcome page
+// *** static or best seller / by catagory?
+
+// 5
+// bash
