@@ -105,14 +105,40 @@
             <a href="#"style="color:white">ABOUT US</a>
         </div>
         
-        <?php
-            mysql_select_db("helpdesk",mysql_connect("localhost","root",""))or die (mysql_error());
-            $query = "SELECT * FROM helpline"; */ This line should select what I choose in drop down menu
-            /*
-             $result = mysql_query($query);
-             while ($row = mysql_fetch_array($result)){ */
         
+        <!-- php or ajax -->
+        <?php
+            mysql_select_db("location",mysql_connect("localhost","root",""))or die (mysql_error());
+            $query = "SELECT * FROM location"; /* This line should select what I choose in drop down menu
+            */
+            $result = mysql_query($query);
+            
+            if(isset($_POST['namelist'])){
+                $dropdown_val = $_POST['namelist'];
+                $query .= " WHERE MISC = '$dropdown_val'";
+            }
+            
+            while ($row = mysql_fetch_array($result)){
             ?>
+            <table border="0" cellpadding="6" cellspacing="6" class="curve">
+            <thead>
+                <tr>
+                    <th> <div align="right"><span class="font">name</span></div></th>
+                    <th> <div align="right"><span class="font">location</span></div></th>
+                    <!-- add link and picture to that restuarant -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><div align="left"><span class="font"><?php echo $row['name']; ?></span></div></th>
+                    <td><div align="left"><span class="font"><?php echo $row['location']; ?></span><div></td>
+                </tr>
+            </tbody>
+            &nbsp;
+            <?php
+            }
+        
+        ?>
         
         
     </body>
