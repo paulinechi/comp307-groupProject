@@ -1,0 +1,27 @@
+{
+    "sellers": [
+        {
+            "first_name": "", 
+            "last_name": "", 
+            "restaurant_name": "", 
+            "seller_name": "Bob", 
+            "menu": [
+                {
+                    "item_name": "Chicken", 
+                    "item_picture": "", 
+                    "item_ingredients": [], 
+                    "item_price": 4.5
+                }, 
+                {
+                    "item_name": "", 
+                    "item_picture": "", 
+                    "item_ingredients": [], 
+                    "item_price": ""
+                }
+            ], 
+            "location": "", 
+            "subscribers": [], 
+            "email": ""
+        }
+    ]
+}
