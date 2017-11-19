@@ -10,7 +10,7 @@
 
 .container {
     position: relative;
-    
+
     color: white;
      font-family: Arial, Helvetica, sans-serif;
 }
@@ -23,12 +23,12 @@ margin: 30px;
 }
   #ProfilePic
   {
-    
+
     width:100%;
     height:400px;
-    
-    
-    
+
+
+
   }
   .whitebox
   {
@@ -39,16 +39,16 @@ margin: 30px;
     left: 40px;
     background-color:white;
     color:black;
-    
+
     font-weight:lighter;
-   
+
     padding: 30px;
     width:300px;
-    
+
     height:200px;
-    
+
   }
-  
+
   .nameContainer
   {
   position:relative;
@@ -61,17 +61,17 @@ margin: 30px;
     position:absolute;
     font-size:30px;
     color:black;
-    
-   
+
+
     width:90%;
-    
-    
+
+
     height:40px;
     float: left;
   }
-  
-  
- 
+
+
+
   .des
   {
     color:black;
@@ -79,7 +79,7 @@ margin: 30px;
     bottom: 100px;
     left: 40px;
   }
-  
+
 .foodType
 {
   letter-spacing:3px;
@@ -87,19 +87,19 @@ margin: 30px;
   margin-top: 40px;
   box-sizing: border-box;
   font-size:50px;
- 
+
 }
-  
+
 .rowOf3Dishes
 {
-  
-  
+
+
   font-size:19px;
 	height:466px;
-  
-   
+
+
 }
-  
+
 .block1
 {
    margin-top:20px;
@@ -108,8 +108,8 @@ margin: 30px;
   width: 370px;
 	height: 100%;
   float: left;
- 
-    
+
+
 }
 
 .block2
@@ -148,7 +148,7 @@ margin: 30px;
 {
 	height:45%;
     background:#EDEDED;
-  
+
 }
 
 .nameAndPrice
@@ -159,33 +159,33 @@ margin: 30px;
     background:yellow
     width:100%;
     height:30%;
-    
+
 }
-  
+
 .nameDish
 {
 
   color:#E67864;
   font-weight:bold;
-  
+
   padding-LEFT:8%;
   width:75%;
   box-sizing: border-box;
   height:100%;
 
   float:left;
-  
+
 }
 .priceDish
 {
    box-sizing: border-box;
   border-left:2.5px solid #DEDEDE;
-  
+
   text-align:center;
   margin-left:75%;
   width:25%;
   height:100%;
- 
+
 }
 
 .ingredient
@@ -201,16 +201,16 @@ margin: 30px;
 
   height:30%;
 
-  
+
 }
 .editDish
 {
   color:white;
- 
+
   padding-top:3%;
   padding-left:4%;
   padding-bottom:8%;
- 
+
   margin-left:9%;
   margin-top:5%;
   height:15%;
@@ -220,7 +220,7 @@ margin: 30px;
   letter-spacing: 1.7px;
 }
 
-  
+
 </style>
 </head>
 <body>
@@ -228,14 +228,14 @@ margin: 30px;
 
 <img id="logo" src="https://img4.hostingpics.net/thumbs/mini_312709ScreenShot20171108at15305AM.png" alt="logoPic">
 <div class="container">
-  <img id="ProfilePic" src="https://hdwallsource.com/img/2014/6/food-wallpaper-5773-5938-hd-wallpapers.jpg" alt="Profile pic">
+  <img id="ProfilePic" src="https://hdwallsource.com/img/2014/6/food-wallpaper-5773-5938-hd-wallpapers.jpg" style="width:1000px;height:600px;" alt="Profile pic">
 
   <div class="whitebox">
   <div class= nameContainer>
     <div class ="name"> MrFognini </div>
-    
+
    </div>
-   
+
     <div class="des" >9069 Langelier, St-Leonard, Montreal</div>
   </div>
 </div>
@@ -245,32 +245,32 @@ margin: 30px;
 
 
 
-   
+
       <form method="post" action="/action_page_post.php">
         <div>
 
           <h3>Dish name</h3>
-        
+
           <input type="text" name="nm" id="dname" placeholder="Dish name">
           <h3>Dish price</h3>
-          
+
           <input type="text" name="prc" id="dprice" placeholder="Dish price">
           <h3>Ingredient</h3>
           <input type="text" name="ing" id="dingred" placeholder="Dish ingredient">
           </div>
-          
+
           <input type="submit" onclick="getVal();" data-inline="true"  value="Add dish";>
           </form>
-          
-         
-
-   
 
 
 
 
 
-  
+
+
+
+
+
 <script>
 //alert('s');
 var list = [];
@@ -281,7 +281,7 @@ document.getElementsByTagName('body')[0].appendChild(parentDiv);
 
 
 function addDish(img,name,price,ingred)
-{	
+{
 	//block (block < parentDiv); needs ID and Class (ID,C)
 	var block = document.createElement('div');
     block.className = 'block';
@@ -294,9 +294,9 @@ function addDish(img,name,price,ingred)
     block.style.marginTop = '20px';
     block.style.marginBottom = '20px';
     block.style.float = 'left';
-    
-    
-    
+
+
+
     //block = dishImg(C,ID) + info(C)
     var dishImg = document.createElement('div');
     block.appendChild(dishImg);
@@ -308,14 +308,14 @@ function addDish(img,name,price,ingred)
     dishImg.style.backgroundSize = 'cover';
     dishImg.style.backgroundRepeat= "no-repeat";
     dishImg.style.backgroundPosition = "50% 50%";
-    
-    
+
+
     var info = document.createElement('div');
     info.className = "info";
     info.style.background = "#EDEDED";
     info.style.height = "45%";
     block.appendChild(info);
-    
+
     //info (C) = namePrice(C) + ingred(C) + editDish(C,ID)
     var namePrice = document.createElement('div');
     namePrice.className = "namePrice";
@@ -324,7 +324,7 @@ function addDish(img,name,price,ingred)
     namePrice.style.boxSizing = 'border-box';
     namePrice.style.paddingTop = '11%';
     namePrice.style.letterSpacing = '1px';
-    
+
     //namePrice (C)  (nameDish(C,ID) + priceDish(C,ID))
     var nameDish = document.createElement('div');
     nameDish.className = "nameDish";
@@ -337,8 +337,8 @@ function addDish(img,name,price,ingred)
     nameDish.style.boxSizing = 'border-box';
     nameDish.style.float = 'left';
     nameDish.innerHTML = name;
-   
-    
+
+
     //C,ID
     var priceDish = document.createElement('div');
     priceDish.className = "priceDish";
@@ -350,12 +350,12 @@ function addDish(img,name,price,ingred)
     priceDish.style.width = '25%';
     priceDish.style.height = '100%';
     priceDish.innerHTML = price;
-    
+
     namePrice.appendChild(nameDish);
     namePrice.appendChild(priceDish);
-    
+
     info.appendChild(namePrice);
-    
+
     //C,ID
     var ingredient = document.createElement('div');
     ingredient.className = "ingredient";
@@ -368,7 +368,7 @@ function addDish(img,name,price,ingred)
     ingredient.style.height = '30%';
     ingredient.innerHTML = ingred;
     info.appendChild(ingredient);
-    
+
     //C,ID
     var editDish = document.createElement('div');
     editDish.className = "editDish";
@@ -385,13 +385,13 @@ function addDish(img,name,price,ingred)
     editDish.style.boxSizing = 'border-box';
     editDish.style.letterSpacing = '1.7px';
     editDish.innerHTML = 'Edit';
-    
-    
+
+
     info.appendChild(editDish);
-    
+
     var prev = document.getElementById(list[list.length-2])
     parentDiv.insertBefore(block,prev);
-    
+
 
 
 }
@@ -436,14 +436,14 @@ pics.push("https://wallpaperscraft.com/image/chops_meat_dishes_potatoes_plate_sa
 
 
 
-  
-
-  
- 
 
 
- 
-  
+
+
+
+
+
+
 </script>
 
 
