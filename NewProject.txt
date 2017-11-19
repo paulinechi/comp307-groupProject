@@ -1,0 +1,60 @@
+#/bin/bash
+
+#check path validity
+
+if [ -d $1 ]; then
+#check if only a path was provided
+        if [ $# = 1 ]; then
+                echo "No project name provided. type in: NewProject path project_name"
+                exit
+        elif [ $# = 2 ]; then
+#everything is good
+                cd $1
+                mkdir $2
+                cd $2
+        fi
+
+#check whether  no path was provided or a wrong path is provided
+else
+        if [ $# = 1 ]; then
+                mkdir $1
+                cd $1
+
+        elif [ $# = 2 ]; then
+                echo "your path name is malformed. Type in: NewProject path project_name"
+                exit
+        fi
+
+fi
+
+#make
+mkdir docs;mkdir backup;mkdir source;mkdir archive
+#now make compile file in souce dir
+cd source
+echo '#!/bin/bash
+swtch="no"
+if [ "-o" = "$1" ]; then
+        swtch="yes"
+        executable_name="$2"
+        shift;shift
+fi
+if [ $# = 0 ]; then
+        echo " You are missing file names. Type in: compile -o executable_name filename(s)"
+        exit
+fi
+
+fileArray="$@"
+for file in "$fileArray"
+        do
+                cp $file ../backup
+                done
+if [ $swtch = "yes" ]; then
+        gcc -o $executable_name $fileArray 2> errors
+fi
+if [ $swtch = "no" ]; then
+        gcc $fileArray 2> errors
+fi
+
+cat errors|more'>compile
+
+chmod +x compile
