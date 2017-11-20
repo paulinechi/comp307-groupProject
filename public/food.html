@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>homemade food</title>
+        <meta charset="utf-8">
+            
+        <style>
+        .header {
+            padding: 150px;
+            text-align: center;
+            font-family: Helvetica;
+            overflow:hidden;
+            position:relative;
+            background-image: url("http://img.huffingtonpost.com/asset/scalefit_960_noupscale/585be1aa1600002400bdf2a6.jpeg");
+            font-size:1.2em;
+            }
+            
+        .aboveHeader{
+            background-color:black;
+            text-align:center;
+            overflow:hidden;
+            font-family: arial,sans-serif;
+            padding-bottom:3px;
+            padding-top:3px;
+            }
+        
+        .aboHeaderR{
+            float: right;
+            overflow:hidden;
+            padding-right: 80px;
+        }
+   
+        .topnav {
+            overflow: hidden;
+            background-color: #c94c4c;
+            font-family: arial,sans-serif;
+            text-align:center;
+            padding-bottom:3px;
+            padding-top:3px;
+            font-size:0.8em;
+
+        }
+        
+        .floated_img{
+            float:left;
+            display: inline-block;
+            padding:25px;
+        
+        }
+        
+        .object-fit_cover {
+            object-fit: cover
+        }
+        
+        .imageSec{
+            margin-left:auto;
+            margin-right:auto;
+            width:80%;
+        }
+        
+        
+        
+
+        </style>
+    </head>
+    
+    <body>
+        <div class="aboveHeader" id ="aboTcolors">
+            <div class="aboHeaderR" style="color:white">
+                Welcome, Guest
+                <a href="#" style="color:#c94c4c">  Login</a>
+                <a href="#" style="color:#c94c4c"> Sign Up </a>
+            </div>
+        </div>
+        
+        <div class="header" class="container" id="headercolor" >
+            <div class="headerL">
+                <h1 style="color:white">Homemade Food Delivery</h1>
+            </div>
+            <div class="headerR">
+                <h3 style="color:white" > Freshly delivered to you </h3>
+            </div>
+            
+            <div id="location">
+            <!-- 1st way, enter location and search directly, hard -->
+            
+            <!--
+              <form action="echo.cgi" method="get" style=" color:#eea29a">
+                    Enter your stree address:       <input type="text" name="location"  size="50"><br>
+                        <input type="submit" value="Find Restaurants">
+                </form>
+  
+              -->
+              
+              
+            <!-- 2st way, select from drag down list, easy -->
+   
+                <form action="/action_page.php" style="color:#eea29a">
+                    Select your neighbourhood:
+                    <select name="neighbourhood">
+                        <option value="Ahuntsic-Cartierville">Ahuntsic-Cartierville</option>
+                        <option value="Côte-des-Neiges–Notre-Dame-de-Grâce">Côte-des-Neiges–Notre-Dame-de-Grâce</option>
+                        <option value="Lachine">Lachine</option>
+                        <option value="Le Plateau-Mont-Royal">Le Plateau-Mont-Royal</option>
+                        <option value="Mercier–Hochelaga-Maisonneuve">Mercier–Hochelaga-Maisonneuve</option>
+                        <option value="Outremont">Outremont</option>
+                        <option value="Rosemont–La Petite-Patrie">Rosemont–La Petite-Patrie</option>
+                        <option value="Saint-Laurent">Saint-Laurent</option>
+                        <option value="Verdun">Verdun</option>
+                        <option value="Ville-Marie">Ville-Marie</option>
+                        <option value="West Island">West Island</option>
+                        <option value="Westmount">Westmount</option>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="feed me food!">
+                </form>
+                
+            </div>
+        </div>
+  
+        <div class="topnav" id="navbar" >
+            <a href="#" style="color:white"> HOME</a>
+            <a href="#" style="color:white">MENU</a>
+            <a href="#"style="color:white">CART</a>
+            <a href="#"style="color:white">ABOUT US</a>
+        </div>
+        
+        
+        <div class="imageSec">
+        <div class="floated_img">
+            <img class="object-fit_cover" src="http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg"
+                onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg'"
+                
+                alt="Some image" height="200" width="200">
+                <a href="#"> <p>click me for more info</p> </a>
+             </div>
+        
+        
+        <div class="floated_img">
+            <img class="object-fit_cover" src="http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd"
+                onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd'"
+                
+                alt="Another image" height="200" width="200" >
+                <a href="#"> <p>click me for more info</p> </a>
+        </div>
+       
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg'"
+               
+               alt="Some image" height="200" width="200">
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       
+       
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd'"
+               
+               alt="Another image" height="200" width="200" >
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg'"
+               
+               alt="Some image" height="200" width="200">
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       
+       
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd'"
+               
+               alt="Another image" height="200" width="200" >
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg'"
+               
+               alt="Some image" height="200" width="200">
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       
+       
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd'"
+               
+               alt="Another image" height="200" width="200" >
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://www.annholm.net/wp-content/uploads/2015/08/junk-food.jpg'"
+               
+               alt="Some image" height="200" width="200">
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       
+       
+       <div class="floated_img">
+           <img class="object-fit_cover" src="http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd"
+               onmouseover="this.src='https://oneclassblog.com/wp-content/uploads/2017/10/food.jpg'" onmouseout="this.src='http://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=1129b294cac0bdadd7d2a98d4f34e1dd'"
+               
+               alt="Another image" height="200" width="200" >
+               <a href="#"> <p>click me for more info</p> </a>
+               </div>
+       
+        
+    </body>
+    
+    
+    
+    
+    
+    
+    
+</html>

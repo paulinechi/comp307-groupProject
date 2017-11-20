@@ -1,0 +1,295 @@
+<!--
+// 1
+// after user select certain location
+// send location to database, search under category and printout all results to new page
+// *** did we store resto location in the form?
+
+// 2
+// link login / register to Gael's page
+
+// 3
+// after written down their usr: name / email / (location - suggestion)
+//                          seller: location / daily manu
+//                          save info to database
+
+// 4
+// welcome page
+// *** static or best seller / by catagory?
+ 
+// 5
+// bash
+ 
+-->
+
+
+
+<!-- 1 -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>homemade food</title>
+        <meta charset="utf-8">
+    
+    <style>
+        .header {
+            padding: 30px;
+            text-align: center;
+            font-family: Helvetica;
+            overflow:hidden;
+            position:relative;
+            background-image: url("http://img.huffingtonpost.com/asset/scalefit_960_noupscale/585be1aa1600002400bdf2a6.jpeg");
+            font-size:1.2em;
+        }
+    
+    .aboveHeader{
+        background-color:black;
+        text-align:center;
+        overflow:hidden;
+        font-family: arial,sans-serif;
+        padding-bottom:3px;
+        padding-top:3px;
+    }
+    
+    .aboHeaderR{
+        float: right;
+        overflow:hidden;
+        padding-right: 80px;
+    }
+    
+    .topnav {
+        overflow: hidden;
+        background-color: #c94c4c;
+        font-family: arial,sans-serif;
+        text-align:center;
+        padding-bottom:3px;
+        padding-top:3px;
+        font-size:0.8em;
+        
+    }
+
+
+    </style>
+    
+    </head>
+    
+    <body>
+        <div class="aboveHeader" id ="aboTcolors">
+            <div class="aboHeaderR" style="color:white">
+                Welcome, Guest
+                <a href="#" style="color:#c94c4c">  Login</a>
+                <a href="#" style="color:#c94c4c"> Sign Up </a>
+            </div>
+        </div>
+        
+        
+        <div class="header" class="container" id="headercolor" >
+            <div class="headerL">
+                <h1 style="color:white">Homemade Food Delivery</h1>
+            </div>
+            <div class="headerR">
+                <h3 style="color:white" > Freshly delivered to you </h3>
+            </div>
+        </div>
+
+        
+        
+        
+        
+        <div class="topnav" id="navbar" >
+            <a href="#" style="color:white"> HOME</a>
+            <a href="#" style="color:white">MENU</a>
+            <a href="#"style="color:white">CART</a>
+            <a href="#"style="color:white">ABOUT US</a>
+        </div>
+        
+        
+        <!-- php or ajax -->
+        <?php
+            mysql_select_db("location",mysql_connect("localhost","root",""))or die (mysql_error());
+            $query = "SELECT * FROM location"; /* This line should select what I choose in drop down menu
+            */
+            $result = mysql_query($query);
+            
+            if(isset($_POST['namelist'])){
+                $dropdown_val = $_POST['namelist'];
+                $query .= " WHERE MISC = '$dropdown_val'";
+            }
+            
+            while ($row = mysql_fetch_array($result)){
+            ?>
+            <table border="0" cellpadding="6" cellspacing="6" class="curve">
+            <thead>
+                <tr>
+                    <th> <div align="right"><span class="font">name</span></div></th>
+                    <th> <div align="right"><span class="font">location</span></div></th>
+                    <!-- add link and picture to that restuarant -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><div align="left"><span class="font"><?php echo $row['name']; ?></span></div></th>
+                    <td><div align="left"><span class="font"><?php echo $row['location']; ?></span><div></td>
+                </tr>
+            </tbody>
+            &nbsp;
+            <?php
+            }
+        
+        ?>
+        
+        
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

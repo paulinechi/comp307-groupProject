@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position: relative;
+
+    color: white;
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo
+{
+width:120px;
+height:35px;
+margin: 30px;
+}
+  #ProfilePic
+  {
+
+    width:100%;
+    height:400px;
+
+
+
+  }
+  .whitebox
+  {
+     box-shadow: 10px 10px 20px black;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    background-color:white;
+    color:black;
+
+    font-weight:lighter;
+
+    padding: 30px;
+    width:300px;
+
+    height:200px;
+
+  }
+
+  .nameContainer
+  {
+  position:relative;
+  width:100%;
+  height:50px;
+  }
+  .name
+  {
+    contenteditable:false ;
+    position:absolute;
+    font-size:30px;
+    color:black;
+
+
+    width:90%;
+
+
+    height:40px;
+    float: left;
+  }
+
+
+
+  .des
+  {
+    color:black;
+     position: absolute;
+    bottom: 100px;
+    left: 40px;
+  }
+
+.foodType
+{
+  letter-spacing:3px;
+  margin-left: 40px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  font-size:50px;
+
+}
+
+.rowOf3Dishes
+{
+
+
+  font-size:19px;
+	height:466px;
+
+
+}
+
+.block1
+{
+   margin-top:20px;
+  margin-bottom:20px;
+  margin-left:40px;
+  width: 370px;
+	height: 100%;
+  float: left;
+
+
+}
+
+.block2
+{
+   margin-top:20px;
+  margin-bottom:20px;
+  margin-left:40px;
+  width: 370px;
+  height: 100%;
+  float: left;
+}
+
+.block3
+{
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:40px;
+  width: 370px;
+  height: 100%;
+  float: left;
+
+}
+
+.dishPic
+{
+	height:58%;
+    background:green;
+}
+.dishImg
+{
+  width:100%;
+  height:100%;
+}
+
+.info
+{
+	height:45%;
+    background:#EDEDED;
+
+}
+
+.nameAndPrice
+{
+   letter-spacing: 1px;
+    padding-top:11%;
+    box-sizing: border-box;
+    background:yellow
+    width:100%;
+    height:30%;
+
+}
+
+.nameDish
+{
+
+  color:#E67864;
+  font-weight:bold;
+
+  padding-LEFT:8%;
+  width:75%;
+  box-sizing: border-box;
+  height:100%;
+
+  float:left;
+
+}
+.priceDish
+{
+   box-sizing: border-box;
+  border-left:2.5px solid #DEDEDE;
+
+  text-align:center;
+  margin-left:75%;
+  width:25%;
+  height:100%;
+
+}
+
+.ingredient
+{
+
+  padding-top:2%;
+  padding-left:8%;
+  padding-right:10%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+
+
+
+  height:30%;
+
+
+}
+.editDish
+{
+  color:white;
+
+  padding-top:3%;
+  padding-left:4%;
+  padding-bottom:8%;
+
+  margin-left:9%;
+  margin-top:5%;
+  height:15%;
+  width:20%;
+  background:#E67864;
+  box-sizing: border-box;
+  letter-spacing: 1.7px;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<img id="logo" src="https://img4.hostingpics.net/thumbs/mini_312709ScreenShot20171108at15305AM.png" alt="logoPic">
+<div class="container">
+  <img id="ProfilePic" src="https://hdwallsource.com/img/2014/6/food-wallpaper-5773-5938-hd-wallpapers.jpg" style="width:1100px;height:600px;" alt="Profile pic">
+
+  <div class="whitebox">
+  <div class= nameContainer>
+    <div class ="name"> MrFognini </div>
+
+   </div>
+
+    <div class="des" >9069 Langelier, St-Leonard, Montreal</div>
+  </div>
+</div>
+
+<div class="foodType"> Our menu </div>
+
+
+
+
+
+      <form method="post" action="/action_page_post.php">
+        <div>
+
+          <h2>Dish name</h2>
+
+          <input type="text" name="nm" id="dname" placeholder="Dish name">
+          <h2>Dish price</h2>
+
+          <input type="text" name="prc" id="dprice" placeholder="Dish price">
+          <h2>Ingredients</h2>
+          <input type="text" name="ing" id="dingred" placeholder="Dish ingredient">
+          </div>
+
+          <input type="submit" onclick="getVal();" data-inline="true"  value="Add dish";>
+          </form>
+
+
+
+
+
+
+
+
+
+
+<script>
+//alert('s');
+var list = [];
+var parentDiv = document.createElement('div');
+parentDiv.style.fontSize = '19px';
+var numOfDishes = 0;
+document.getElementsByTagName('body')[0].appendChild(parentDiv);
+
+
+function addDish(img,name,price,ingred)
+{
+	//block (block < parentDiv); needs ID and Class (ID,C)
+	var block = document.createElement('div');
+    block.className = 'block';
+    numOfDishes++;
+    block.id = 'block'+''+numOfDishes;
+    list.push(block.id);
+   	block.style.width = '370px';
+    block.style.height = '466px';
+    block.style.marginLeft = '40px';
+    block.style.marginTop = '20px';
+    block.style.marginBottom = '20px';
+    block.style.float = 'left';
+
+
+
+    //block = dishImg(C,ID) + info(C)
+    var dishImg = document.createElement('div');
+    block.appendChild(dishImg);
+   	dishImg.className = 'dishImg';
+    dishImg.id = 'dishImg' + numOfDishes;
+    dishImg.style.width = '100%';
+    dishImg.style.height = '58%';
+    dishImg.style.backgroundImage = "url("+img+")";
+    dishImg.style.backgroundSize = 'cover';
+    dishImg.style.backgroundRepeat= "no-repeat";
+    dishImg.style.backgroundPosition = "50% 50%";
+
+
+    var info = document.createElement('div');
+    info.className = "info";
+    info.style.background = "#EDEDED";
+    info.style.height = "45%";
+    block.appendChild(info);
+
+    //info (C) = namePrice(C) + ingred(C) + editDish(C,ID)
+    var namePrice = document.createElement('div');
+    namePrice.className = "namePrice";
+    namePrice.style.width = '100%';
+    namePrice.style.height = '30%';
+    namePrice.style.boxSizing = 'border-box';
+    namePrice.style.paddingTop = '11%';
+    namePrice.style.letterSpacing = '1px';
+
+    //namePrice (C)  (nameDish(C,ID) + priceDish(C,ID))
+    var nameDish = document.createElement('div');
+    nameDish.className = "nameDish";
+    nameDish.id = 'nameDish'+numOfDishes;
+    nameDish.style.color = '#E67864';
+    nameDish.style.fontWeight = 'bold';
+    nameDish.style.paddingLeft = '8%';
+    nameDish.style.width = '75%';
+    nameDish.style.height = '100%';
+    nameDish.style.boxSizing = 'border-box';
+    nameDish.style.float = 'left';
+    nameDish.innerHTML = name;
+
+
+    //C,ID
+    var priceDish = document.createElement('div');
+    priceDish.className = "priceDish";
+    priceDish.id = 'priceDish'+numOfDishes;
+    priceDish.style.boxSizing = 'border-box';
+    priceDish.style.borderLeft = '2.5px solid #DEDEDE';
+    priceDish.style.textAlign = 'center';
+    priceDish.style.marginLeft = '75%';
+    priceDish.style.width = '25%';
+    priceDish.style.height = '100%';
+    priceDish.innerHTML = price;
+
+    namePrice.appendChild(nameDish);
+    namePrice.appendChild(priceDish);
+
+    info.appendChild(namePrice);
+
+    //C,ID
+    var ingredient = document.createElement('div');
+    ingredient.className = "ingredient";
+    ingredient.id = 'ingredient'+numOfDishes;
+    ingredient.style.paddingTop = '2%';
+    ingredient.style.paddingLeft = '8%';
+    ingredient.style.paddingRight = '10%';
+    ingredient.style.boxSizing = 'border-box';
+    ingredient.style.letterSpacing = '1px';
+    ingredient.style.height = '30%';
+    ingredient.innerHTML = ingred;
+    info.appendChild(ingredient);
+
+    //C,ID
+    var editDish = document.createElement('div');
+    editDish.className = "editDish";
+    editDish.id = 'editDish'+numOfDishes;
+    editDish.style.color = 'white';
+    editDish.style.paddingTop = '3%';
+    editDish.style.paddingLeft = '4%';
+    editDish.style.paddingBottom = '8%';
+    editDish.style.marginLeft = '9%';
+    editDish.style.marginTop = '5%';
+    editDish.style.height = '15%';
+    editDish.style.width = ' 20%';
+    editDish.style.background = "#E67864";
+    editDish.style.boxSizing = 'border-box';
+    editDish.style.letterSpacing = '1.7px';
+    editDish.innerHTML = 'Edit';
+
+
+    info.appendChild(editDish);
+
+    var prev = document.getElementById(list[list.length-2])
+    parentDiv.insertBefore(block,prev);
+
+
+
+}
+
+function getVal()
+{
+	var nd = document.getElementById('dname').value;
+    var pd = document.getElementById('dprice').value;
+  	var ingd = document.getElementById('dingred').value;
+ if(nd && pd && ingd){   addDish(pics[Math.round(Math.random()*pics.length)],nd,pd,ingd)
+ }
+    /*document.getElementById('dname').value = "";
+    document.getElementById('dprice').value = "";
+    document.getElementById('dingred').value = "";*/
+}
+
+var pics = ["http://i.ndtvimg.com/i/2016-05/italian-625_625x350_61464171519.jpg"];
+pics.push("https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2014/09/30/102046292-153784617.jpg?v=1412100457");
+pics.push("https://www.fitnaturally.co.uk/wp-content/uploads/2015/10/spicy-tomato-meatballs-fitnaturally-healthy-eating-diet-nutriton-great-food-no-fads.jpg");
+pics.push("http://www.printawallpaper.com/upload/designs/sushi_platter_detail.jpg");
+pics.push("http://www.districtgourmet.com/wp-content/uploads/2010/09/Hiros-Yakko-San-Sashimi.jpg");
+pics.push("https://i1.wp.com/www.sleekgeek.co.za/wp-content/uploads/2016/02/lchf-banting-meal-plan.jpg?fit=899%2C666&w=640");
+pics.push("https://i2.wp.com/blackdoctor.wpengine.com/wp-content/uploads/2014/04/friend-chicken-1.jpg?resize=710%2C474");
+pics.push("http://s1.1zoom.me/big0/372/Meat_products_Shashlik_French_fries_White_521249_1280x866.jpg");
+pics.push("http://www.1zoom.me/big2/64/183042-dorren.jpg");
+pics.push("http://media2.intoday.in/indiatoday/images/stories/kebab-660_032913033816.jpg");
+pics.push("https://wallpaperscraft.com/image/chops_meat_dishes_potatoes_plate_salad_vegetables_white_background_78232_3840x2160.jpg");
+
+
+
+
+
+/*for(var i = 0; i  < pics.length;i++)
+{
+	addDish(pics[i],"Amazing dish","$10.42","Beef, tomato, hot sauce, rice, fish,...")
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
