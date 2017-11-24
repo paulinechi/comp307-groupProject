@@ -14,7 +14,7 @@ if [ -d $1 ]; then
                 cd $2
         fi
 
-#check whether  no path was provided or a wrong path is provided
+#check whether no path was provided or a wrong path is provided
 else
         if [ $# = 1 ]; then
                 mkdir $1
