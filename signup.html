@@ -191,8 +191,33 @@
         
                 <div class="clearfix">
                     <button type="button" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <button type="submit" class="signupbtn" onclick="loadDoc()">Sign Up</button>
                 </div>
+                
+                <script>
+                    
+                var jsonData = { "passID" : $("#password").val(),
+                                 "userID" : $(("#username").val(),
+                                       
+                                              
+                                              }
+                                              
+                $(document).ready(function() {
+                    $('#saveme').click(function() {
+                        $.ajax({
+                        type: "POST",
+                        url: "works.py",
+                        contentType: "application/json; charset=utf-8",
+                        data: jsonData,
+                        dataType: "json",
+                        success: function (msg) {
+                            alert("This recipe has been saved in your db");
+                        }
+                    });
+                });
+                    
+                </script>
+                
             </div>
         </form>
         
