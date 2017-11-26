@@ -172,8 +172,8 @@
         
         <div id = signup>
         <h2>Signup Form</h2>
-        
-        <form action="/action_page.php" style="border:1px solid #ccc">
+       
+        <form action="function()" style="border:1px solid #ccc">
             <div class="container2">
             
             <label><b> Username</b></label>
@@ -196,12 +196,10 @@
                 
                 <script>
                     
+             
                 var jsonData = { "passID" : $("#password").val(),
-                                 "userID" : $(("#username").val(),
-                                       
-                                              
-                                              }
-                                              
+                    "userID" : $(("#username").val()}
+                                 
                 $(document).ready(function() {
                     $('#saveme').click(function() {
                         $.ajax({
@@ -212,10 +210,13 @@
                         dataType: "json",
                         success: function (msg) {
                             alert("This recipe has been saved in your db");
-                        }
-                    });
-                });
-                    
+                               }
+                               });
+                                       });
+                                  
+                                  
+                                  }
+           
                 </script>
                 
             </div>

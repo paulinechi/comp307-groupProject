@@ -529,9 +529,28 @@ function removeElementsByClass(className){
    elements[0].parentNode.removeChild(elements[0]);
     }
 }
-
-
 </script>
+
+
+<!-- check if username and password correct, if so, display user/seller profile page; if no, display error msg -->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#username").change(function(){
+            $("#message").html("<img src='images/loader.gif' /> checking...");
+            var username = $("#username").val();
+            $.post( "check.php", { user: $("#username").val() }, function (data){
+                if(data=='1'){
+                //do 1
+                   }
+                elseif(data=='0'){
+                  //do 0
+                }
+            });
+        });
+   });
+</script>
+
 
 
 </html>
