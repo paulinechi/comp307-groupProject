@@ -7,8 +7,10 @@
 <style>
 
 body {    
+background:url("back.jpg");
     margin: 0 !important;
     padding: 0 !important;
+    
     background-size : cover;
     background-repeat: no-repeat;
     background-position : 50% 50%; 
@@ -32,6 +34,7 @@ body {
 {
 	text-decoration: none;
     color:white;
+	font-weight:bold;
 }
 
 #hoofoo
@@ -77,7 +80,7 @@ body {
     font-family: Helvetica;
     overflow:hidden;
     position:relative;
-    background-image: url("http://img.huffingtonpost.com/asset/scalefit_960_noupscale/585be1aa1600002400bdf2a6.jpeg");
+    background-image: url("homeImg.jpeg");
     font-size:1.2em;
     background-size : cover;
     background-repeat: no-repeat;
@@ -131,6 +134,7 @@ button:hover {
 #submitButton
 {
     margin-left:30%;
+    margin-bottom:2%;
     width: auto;
     padding: 10px 18px;
     background-color: #4CAF50;
@@ -140,21 +144,26 @@ button:hover {
 {
 	margin:50px;
 	margin-left:25%;
-	height:100px;
+	height:150px;
     width:500px;
     border: 1px solid gray;
+    border-radius:7px;
+    box-shadow:0px 0px 5px #888888;
+    cursor:pointer;
     
     /*background:gray;*/
 }
 .sellerImg
 {
 	float:left;
-    width:20%;
+    width:30%;
     height:100%;
-    background-image: url("http://images.all-free-download.com/images/graphiclarge/fries_and_steak_on_plate_193268.jpg");
      background-size : cover;
     background-repeat: no-repeat;
     background-position : 50% 50%;
+    border-top-left-radius:7px;
+    border-bottom-left-radius:7px;
+   
     
 }
 
@@ -162,9 +171,11 @@ button:hover {
 {
 	
 	float:left;
-    width: 80%;
+    width: 70%;
     height:100%;
   background:#F8F8FF;
+   border-top-right-radius:7px;
+   border-bottom-right-radius:7px;
     /*background-image: url("https://i2.wp.com/sanctuaryphiladelphia.org/wp-content/uploads/2016/02/Silver-Blur-Background-e1455576248201.jpg?fit=1600%2C900");*/
     
 }
@@ -291,20 +302,17 @@ span.psw {
 
 </head>
 <!--***********-START BODY-****************-->
-<body background="https://i2.wp.com/sanctuaryphiladelphia.org/wp-content/uploads/2016/02/Silver-Blur-Background-e1455576248201.jpg?fit=1600%2C900">
+<body >
 
 <!----------------Top bar------------------->
 <div id='topbar'>
 	<div id='hoofoo'> <a href="#">Hoofoo</a>
     </div>
     
-    <div id='cart'> <a href="/Users/chifeixuan/Documents/GitHub/comp307groupProject/signup.html">Register</a>
+    <div id='cart'> <a href="#">Cart</a>
     </div>
     
-    
-    
-    
-    <div id='user' onclick="document.getElementById('id01').style.display='block'"> <a href="#">Sign in</a>
+    <div id='user' onclick="document.getElementById('id01').style.display='block'"> <a href="#">alex95</a>
     </div>
 
 </div>
@@ -312,7 +320,7 @@ span.psw {
 <!----------------Header------------------->
 <div class="header" >
   	<div >
-      <h1 style="color:white">Homemade Food Delivery</h1>
+      <h1 style="color:white">Homemade Food Discovery</h1>
     </div>
     <div>
       <h3 style="color:white" > Freshly delivered to you </h3>
@@ -326,10 +334,12 @@ span.psw {
 </div>
     <select id="ctg" name="categories">
     <option value="Anything">Anything</option>
-      <option value="Chicken">Chicken</option>
-      <option value="Beef">Beef</option>
-      <option value="Pork">Pork</option>
-      <option value="Fish">Fish</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Greek">Greek</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Italian">Italian</option>
+      <option value="Thai">Thai</option>
+      <option value="Mexican">Mexican</option>
       
     </select>
     <br><br>
@@ -424,28 +434,53 @@ span.psw {
 
 
 
-var sellers = [ {name:"JimmyChang123",neighbour:"Verdun",Tags:["Beef","Chicken","Fish"]},
-{name:"ZMaruoZ",neighbour:"Verdun",Tags:["Chicken","Pork","Beef"]},
-{name:"JimmyWong",neighbour:"Lachine",Tags:["Chicken"]},
-{name:"Kei94",neighbour:"Lachine",Tags:["Fish"]},
-{name:"holacomoestas",neighbour:"Ahuntsic-Cartierville",Tags:["Fish","Beef","Pork"]},
-{name:"Polypoly95",neighbour:"Ahuntsic-Cartierville",Tags:["Beef"]},
-{name:"SinjinCute",neighbour:"Verdun",Tags:["Beef"]},
-{name:"Maruo",neighbour:"Verdun",Tags:["Chicken"]},
-{name:"kimjong-un",neighbour:"Lachine",Tags:["Chicken","Fish"]},
-{name:"timetoeat",neighbour:"Outremont",Tags:["Fish","Pork","Beef"]},
-{name:"Connor87",neighbour:"Ahuntsic-Cartierville",Tags:["Pork"]},
-{name:"rogerFederer",neighbour:"Ahuntsic-Cartierville",Tags:["Beef","Pork"]},
-{name:"longliveking",neighbour:"Ahuntsic-Cartierville",Tags:["Chicken","Beef"]}
+var sellers = [ {name:"JimmyChang123",img:"chinese.jpg",neighbour:"Verdun",Tags:["Greek","Chinese","Italian"]},
+{name:"ZMaruoZ",img:"inter.jpg",neighbour:"Verdun",Tags:["Chinese","Japanese","Greek"]},
+{name:"JimmyWong",img:"chinese2.jpg",neighbour:"Lachine",Tags:["Chinese"]},
+{name:"Kei94",img:"italian1.jpg",neighbour:"Lachine",Tags:["Italian"]},
+{name:"holacomoestas",img:"italian2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Italian","Greek","Japanese","Mexican"]},
+{name:"Polypoly95",img:"international.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Greek"]},
+{name:"SinjinCute",img:"greekchi.jpg",neighbour:"Verdun",Tags:["Greek","Chinese","Thai","Japanese","Mexican","Italian"]},
+{name:"Maruo",img:"chithai.jpg",neighbour:"Verdun",Tags:["Chinese"]},
+{name:"kimjong-un",img:"jap.jpg",neighbour:"Lachine",Tags:["Chinese","Japanese"]},
+{name:"timetoeat",img:"inter2.jpg",neighbour:"Outremont",Tags:["Italian","Japanese","Greek"]},
+{name:"Connor87",img:"japchi.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Japanese"]},
+{name:"rogerFederer",img:"greek2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Greek","Japanese"]},
+{name:"longliveking",img:"greekchi2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Chinese","Greek"]},
+{name:"easy1992",img:"thai2.jpg",neighbour:"Lachine",Tags:["Thai"]},
+{name:"rafanadal",img:"thai.jpg",neighbour:"Verdun",Tags:["Thai","Mexican"]},
+{name:"olala",img:"mexican2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Thai","Mexican"]}
+
+
 ];
+
+var notFoundContainer = document.createElement('div');
+notFoundContainer.className = 'notFound';
 
 var notFound = document.createElement('div');
 notFound.className = 'notFound';
-notFound.style.height = '20px';
-notFound.style.width = '100px';
-notFound.style.marginLeft = '50%';
+notFound.style.height = '40px';
+notFound.style.width = '40px';
+notFound.style.marginLeft = '30%';
+
+notFound.style.marginBottom = '5%';
 notFound.style.background = 'gray';
-notFound.innerHTML = "Not found";
+notFound.style.background = "url('http://www.myiconfinder.com/uploads/iconsets/256-256-8125e33177d0c567baadf39ffac8ec29-depression.png')";
+notFound.style.backgroundSize = 'cover';
+notFound.style.backgroundSize = 'contain';
+notFound.style.backgroundRepeat = 'no-repeat';
+notFound.style.backgroundPosition = '50% 50%';
+notFound.style.float = 'left';
+var notFoundMess = document.createElement('div');
+notFoundMess.className = 'notFound';
+notFoundMess.innerHTML = 'Sorry, no results found';
+notFoundMess.style.float = 'left';
+notFoundMess.style.marginTop = '10px';
+notFoundMess.style.marginLeft = '30px';
+notFoundMess.style.color = '#FBD971';
+notFoundContainer.appendChild(notFound);
+notFoundContainer.appendChild(notFoundMess);
+
 
 
 
@@ -483,12 +518,19 @@ function displaySellers()
 	  numProfiles++;
       var divContainer = document.createElement('div');
       divContainer.className = 'sellerProfileContainer';
+      divContainer.onclick= function()
+      {
+      location.href='sellerPageBuyerView.html';
+     
+      }
 
        document.getElementsByTagName("body")[0].appendChild(divContainer);
 
 
       var divSellerImg = document.createElement('div');
       divSellerImg.className = 'sellerImg';
+      divSellerImg.style.backgroundImage='url('+sellers[i].img+')';
+      
 
        divContainer.appendChild(divSellerImg);
 
@@ -514,7 +556,7 @@ function displaySellers()
      }
      
      /*if there's no seller of that neighbour, display notFound message*/
-     if(numProfiles == 0) {document.getElementsByTagName('body')[0].appendChild(notFound);}
+     if(numProfiles == 0) {document.getElementsByTagName('body')[0].appendChild(notFoundContainer);}
     else
     {
     	removeElementsByClass('notFound');
@@ -529,28 +571,9 @@ function removeElementsByClass(className){
    elements[0].parentNode.removeChild(elements[0]);
     }
 }
+
+
 </script>
-
-
-<!-- check if username and password correct, if so, display user/seller profile page; if no, display error msg -->
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#username").change(function(){
-            $("#message").html("<img src='images/loader.gif' /> checking...");
-            var username = $("#username").val();
-            $.post( "check.php", { user: $("#username").val() }, function (data){
-                if(data=='1'){
-                //do 1
-                   }
-                elseif(data=='0'){
-                  //do 0
-                }
-            });
-        });
-   });
-</script>
-
 
 
 </html>

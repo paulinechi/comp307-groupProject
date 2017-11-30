@@ -1,41 +1,38 @@
 {
     "sellers": [
         {
-            "last_num": "2", 
-            "first_name": "", 
-            "last_name": "", 
-            "subscribers": [], 
-            "seller_name": "Jack", 
+            "name": "Jack",
+            "username": "",
+            "email": "",
+            "location": "",
+            "restaurant_name": "",
+            "subscribers": [],
             "menu": [
                 {
-                    "item_name": "Chicken", 
-                    "item_picture": "", 
-                    "item_ingredients": [], 
+                    "item_name": "Chicken",
+                    "item_picture": "",
+                    "item_ingredients": [],
                     "item_price": 5.25
-                }, 
+                },
                 {
-                    "item_name": "Poutine", 
-                    "item_picture": "", 
+                    "item_name": "Poutine",
+                    "item_picture": "",
                     "item_ingredients": [
-                        "Fries", 
+                        "Fries",
                         "Gravy"
-                    ], 
+                    ],
                     "item_price": "6.75"
-                }, 
+                },
                 {
-                    "item_id": 3, 
-                    "item_name": "Poutine", 
-                    "item_picture": "", 
+                    "item_name": "Poutine",
+                    "item_picture": "",
                     "item_ingredients": [
-                        "Fries", 
+                        "Fries",
                         "Gravy"
-                    ], 
+                    ],
                     "item_price": "6.75"
                 }
-            ], 
-            "location": "", 
-            "restaurant_name": "", 
-            "email": ""
+            ]
         }
     ]
 }

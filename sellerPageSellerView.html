@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {    
+		/*background:url("http://www.1designshop.com/wp-content/uploads/2015/12/1dsp-20151221-pattern005.png");*/
+        /*background:url("https://hdwallpapers8k.com/wp-content/uploads/clear-sky-nature-hd-wallpaper-1920x1080-3829-1920x1080.jpg");*/
+        background:#DDEDED;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position : 50% 50%;
+    height:100%;
+   
+}
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*-------CSS Top bar (Hoofoo,User,Cart)----------*/
+#topbar
+{
+	
+	height:40px;
+	/*background-color:#16A085;*/
+    margin-bottom:5px;
+    box-sizing:border-box;
+}
+
+#topbar a
+{
+	text-decoration: none;
+    color:white;
+    font-weight:bold;
+}
+
+#hoofoo
+{
+	float:left;
+    height:100%;
+	/*background:gray;*/
+	float:left;
+    padding:15px;
+    box-sizing:border-box;
+}
+
+#user
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+    
+    /*border-right: 2px solid #4B77BE;*/
+    
+    
+}
+
+#cart
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+    margin-right:20px;
+}
+
+/*---------------CSS Button-------------*/
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size:15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+#subscribe
+{
+	background-color: red;
+ 	width:16%;
+}
+#addDishButt
+{
+	
+	margin-left:50px;
+	width:100px;
+    
+}
+
+/*-------CSS Seller profile header----------*/
+
+.sellerProfileContainer
+{
+	box-sizing: border-box;
+    
+	margin:50px;
+    margin-top:10px;
+	width:100%;
+    height:200px;
+	border: 1px solid #EDEDED;
+    
+}
+
+  .profilePic
+  {
+    width: 20%;
+    height:100%;
+    box-sizing: border-box;
+  background:url("italian2.jpg");
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+    
+    float:left;
+  }
+  
+  .sellerDetails
+  {
+  
+ 	/*background:white;*/
+  padding:10px;
+  font-size:16px;
+ 
+  width: 80%;
+  height:100%;
+  
+  float:left;
+  box-sizing: border-box;
+  }
+
+  #sellerName
+  {
+  font-size:20px;
+  	margin:5px;
+    font-weight:bold;
+    box-sizing: border-box;
+  }
+  #sellerFoodType
+  {
+ 
+	
+  font-weight:100;
+  font-size:16px;
+  color:gray;
+  margin:5px;
+  box-sizing: border-box;
+  }
+  #sellerAddress
+  {
+  
+  margin:5px;
+  box-sizing: border-box;
+  }
+  #rating
+  {
+  margin:5px;
+  box-sizing: border-box;
+  }
+  #subscribe
+  {
+  margin:5px;
+  box-sizing: border-box;
+  }
+ 
+ 
+ /*------CSS Add dish-------*/
+ input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 70px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 20px;
+    margin-left:10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+input[type=file]{
+    margin: 8px 50px;
+}
+.fieldName
+{
+	margin-left:50px;
+}
+
+#addDishContainer {
+	display:none;
+	position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+	width:300px;
+    height:300px;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    padding: 30px 10px;
+    z-index: 1002;
+}
+.black_overlay {
+	
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+/*-------CSS Menu----------*/  
+.menu
+{
+  letter-spacing:3px;
+  margin-left: 40px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  font-size:30px;
+ 
+}
+/*-------CSS Dish----------*/  
+.dishesContainer
+{
+
+  font-size:15px;
+	height:366px;
+
+}
+  
+.block
+{
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:40px;
+  width: 270px;
+  height: 100%;
+  float: left;
+  background:blue;
+ 
+    
+}
+
+.dishImg
+{
+  width:100%;
+  height:58%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+}
+
+    
+.info
+{
+	height:45%;
+    background:#EDEDED;
+  
+}
+
+
+.namePrice
+{
+   letter-spacing: 1px;
+    padding-top:11%;
+    box-sizing: border-box;
+    
+    width:100%;
+    height:30%;
+    
+}
+
+.nameDish
+{
+
+  color:#E67864;
+  font-weight:bold;
+  padding-LEFT:8%;
+  width:75%;
+  box-sizing: border-box;
+  height:100%;
+
+  float:left;
+  overflow:auto;
+}
+ 
+.priceDish
+{
+   box-sizing: border-box;
+  border-left:2.5px solid #DEDEDE;
+  text-align:center;
+  margin-left:75%;
+  width:25%;
+  height:100%;
+  overflow:auto;
+ 
+}
+.ingredient
+{
+
+  padding-top:2%;
+  padding-left:8%;
+  padding-right:10%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  height:30%;
+  overflow:auto;
+
+}
+.editButton
+{
+  font-size:15px;
+  color:white;
+ 
+  padding:2%;
+  
+  display: inline-block;
+ 
+  margin-left:9%;
+  margin-top:5%;
+  height:auto;
+  width:auto;
+  background:#E67864;
+ 
+  letter-spacing: 1.7px;
+ 
+}
+.comment
+{
+	padding:50px;
+    padding-bottom:20px;
+	
+	clear:both;
+}
+
+
+.com
+{
+	background:white;
+    width:550px;
+    
+    margin:50px;
+    padding:20px;
+    margin-bottom:0px;
+    margin-top:0px;
+}
+
+</style>
+</head>
+<body>
+
+<!----------------Top bar------------------->
+<div id='topbar'>
+	<div id='hoofoo'> <a href="#">Hoofoo</a>
+    </div>
+    
+    <div id='cart'> <a href="#">Cart</a>
+    </div>
+    
+    <div id='user'> <a href="#">sellerDemo</a>
+    </div>
+
+</div>
+
+<!-------------Seller profile header------------------->
+<div class="sellerProfileContainer">
+  <div class=profilePic></div>
+  
+  <div class='sellerDetails'>
+  	<div id='sellerName'>sellerDemo
+    </div>
+    <div id='sellerFoodType'> Chinese, Thai
+    </div>
+    <div id='sellerAddress'> 893 Yoga Street, Leonard, Ottawa, H1P 3N7
+    </div>
+    <div id='rating'> Overal rating:
+    </div>
+    <div id='phone'> (514)-903-0893
+    </div>
+  
+  	
+  </div>
+
+</div>
+<!-------------Our menu------------------>
+<div class="menu"> Our menu </div>
+
+<!-------------Add dish------------------>
+<div id='addDishButt' onclick="showHideAddDishContainer()"><button>Add dish </button> </div>
+
+
+<div id='addDishContainer'>
+
+	<div class='fieldName'>Dish image</div>
+    <input type="file" id="pi" accept="image/*">
+    <div class='fieldName'>Dish name</div>
+    <input type="text" id="dname" name="dishname" placeholder="Dish name">
+
+    <div class='fieldName'>Price</div>
+    <input type="text" id="dprice" name="dishprice" placeholder="Price dish">
+
+<div class='fieldName'>Ingredients</div>
+    <input type="text" id="dingred" name="dishingredient" placeholder="Ingredients">
+    <div style="display:inline-block">
+     <input type="submit" value="Add dish" onclick='addDish()'>
+     <input  style="background:red"type="submit" value="Cancel" onclick='showHideAddDishContainer()'></div>
+
+
+</div>
+
+<div id="fade" class="black_overlay"></div>
+
+
+<!-------------Post Comment------------------>
+<div class='comment'><h2> Comments</h2> </div>
+
+
+
+
+
+<!-------------Comments-----------------
+<div class='com' id='com1'>Food is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesome!<br>Sinjin</div>
+<div class='com' id='com2'>Food is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesome!<br>Sernin</div>-->
+
+
+<script>
+
+
+//alert(document.getElementsByClassName('menu')[0].style.display);
+
+function showHideAddDishContainer()
+{
+  var a = document.getElementById('addDishContainer');
+  var b = document.getElementById('fade');
+  
+  if(a.style.display == 'block'){
+  a.style.display = 'none';
+  b.style.display = 'none';
+ 
+  
+  
+  }
+  else 
+  {
+  	a.style.display = 'block';
+     b.style.display = 'block';
+     b.style.height ='1000px';
+     
+  }
+}
+
+
+
+var numOfDishes = 0;
+
+
+var dishesContainer = document.createElement('div');
+dishesContainer.className='dishesContainer';
+dishesContainer.innerHTML='';
+
+
+
+
+
+function addDish()
+{	
+	
+	  
+	//get values after click Add Dish
+    var img = document.getElementById('pi').value;
+    img = img.slice(12,img.length);
+	var name = document.getElementById('dname').value;
+    var price = document.getElementById('dprice').value;
+  	var ingred = document.getElementById('dingred').value;
+    
+    if(img && name && price && ingred){ 
+    
+    if(numOfDishes==0) {document.getElementsByTagName('body')[0].insertBefore(dishesContainer,document.getElementsByClassName('comment')[0]);} 
+	//block (block < parentDiv); needs ID and Class (ID,C)
+	var block = document.createElement('div');
+    block.className = 'block';
+   
+    block.id = 'block'+''+numOfDishes;
+    //alert(block.id);
+    
+    
+    
+   	var dishImg = document.createElement('div');
+    block.appendChild(dishImg);
+   	dishImg.className = 'dishImg';
+    dishImg.id = 'dishImg' + numOfDishes;
+    dishImg.style.backgroundImage = "url("+img+")";
+    
+     
+    var info = document.createElement('div');
+    info.className = "info";
+    block.appendChild(info);
+   
+     
+    var namePrice = document.createElement('div');
+    namePrice.className = "namePrice";
+    
+
+    info.appendChild(namePrice);
+    
+    //namePrice (C)  (nameDish(C,ID) + priceDish(C,ID))
+    var nameDish = document.createElement('div');
+    nameDish.className = "nameDish";
+    nameDish.id = 'nameDish'+numOfDishes;
+    
+    nameDish.innerHTML = name;
+    
+    //C,ID
+    var priceDish = document.createElement('div');
+    priceDish.className = "priceDish";
+    priceDish.id = 'priceDish'+numOfDishes;
+    priceDish.innerHTML = '$'+price;
+    
+    namePrice.appendChild(nameDish);
+    namePrice.appendChild(priceDish);
+    
+  
+  	//C,ID
+    var ingredient = document.createElement('div');
+    ingredient.className = "ingredient";
+    ingredient.id = 'ingredient'+numOfDishes;
+    ingredient.innerHTML = ingred;
+    info.appendChild(ingredient);
+    
+    //C,ID
+    var editButton = document.createElement('button');
+    editButton.className = "editButton";
+    editButton.id = 'editButton'+numOfDishes;
+    editButton.innerHTML = 'Edit';
+     info.appendChild(editButton);
+     
+     
+     //if click editbutton, do...
+     editButton.onclick = function(){
+     editButton.style.display='none';
+     ingredient.contentEditable = nameDish.contentEditable = priceDish.contentEditable = 'true';
+     
+     ingredient.style.border=
+     nameDish.style.border=
+     priceDish.style.border='1px solid #f2a482';
+     ingredient.style.background = 
+     nameDish.style.background = 
+     priceDish.style.background = 'white';
+     
+     
+     //add done button 
+     var doneButton = document.createElement('button');
+    doneButton.className = "editButton";
+   	doneButton.id = 'Done'+numOfDishes;
+    doneButton.innerHTML = 'Done';
+     info.appendChild(doneButton);
+     
+     //when click doneButton,do...
+     doneButton.onclick = function()
+     {
+     doneButton.style.display='none';
+     deleteButton.style.display='none';
+     editButton.style.display='block';
+     ingredient.contentEditable = nameDish.contentEditable = priceDish.contentEditable = 'false';
+     
+     ingredient.style.border=
+     nameDish.style.border=
+     priceDish.style.border='';
+     ingredient.style.background = 
+     nameDish.style.background = 
+     priceDish.style.background = '';
+     }
+     //add delete button
+     var deleteButton = document.createElement('button');
+    deleteButton.className = "editButton";
+   	deleteButton.id = 'delete'+numOfDishes;
+    deleteButton.style.marginLeft='50px';
+    deleteButton.innerHTML = 'Delete';
+    info.appendChild(deleteButton)
+    //when click deleteButton, do...
+   	deleteButton.onclick=function()
+    {
+    	dishesContainer.removeChild(document.getElementById(block.id));
+        numOfDishes --;
+        if(numOfDishes==0) {document.getElementsByTagName('body')[0].removeChild(dishesContainer);}
+        
+    }
+     
+     
+     }
+  
+  	var prevDish=document.getElementById('block'+(numOfDishes-1));
+    dishesContainer.insertBefore(block,prevDish);
+    
+    numOfDishes++;
+    
+    //reset values to empty
+    
+  document.getElementById('pi').value = "";  document.getElementById('dname').value = "";
+    document.getElementById('dprice').value = "";
+    document.getElementById('dingred').value = "";
+    
+    var a = document.getElementById('addDishContainer');
+  var b = document.getElementById('fade');
+    a.style.display = 'none';
+  b.style.display = 'none';
+    
+    
+
+}
+}
+
+
+
+
+
+//addDish(pics[0],"abc","$12","beef");
+for(var i = 0; i  < dishes.length;i++)
+{
+//addDish("","","","");	//addDish(dishes[i].pic,dishes[i].name,dishes[i].price,dishes[i].ingred)
+}
+
+
+    
+
+
+  
+</script>
+
+
+
+  
+
+
+
+
+</body>
+</html>
