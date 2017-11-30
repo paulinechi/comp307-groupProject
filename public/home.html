@@ -1,0 +1,579 @@
+<html>
+
+<head>
+
+<title>Homemade food</title>
+<meta charset="utf-8">
+<style>
+
+body {
+background:url("../pics/back.jpg");
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+}
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*-------CSS Top bar (Hoofoo,User,Cart)----------*/
+#topbar
+{
+
+	height:40px;
+	/*background-color:#16A085;*/
+    margin-bottom:5px;
+    box-sizing:border-box;
+}
+
+#topbar a
+{
+	text-decoration: none;
+    color:white;
+	font-weight:bold;
+}
+
+#hoofoo
+{
+	float:left;
+    height:100%;
+	/*background:gray;*/
+	float:left;
+    padding:15px;
+    box-sizing:border-box;
+}
+
+#user
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+
+    /*border-right: 2px solid #4B77BE;*/
+
+
+}
+
+#cart
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+    margin-right:20px;
+}
+
+/*-------------------CSS HEADER---------------------*/
+
+.header
+{
+
+  	padding: 100px;
+    text-align: center;
+    font-family: Helvetica;
+    overflow:hidden;
+    position:relative;
+    background-image: url("homeImg.jpeg");
+    font-size:1.2em;
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+}
+/*---------------CSS Select Categories-----------*/
+#categories
+{
+    padding-top:20px;
+
+
+    margin-left:30%;
+
+}
+#ctg
+{
+	margin-left:30%;
+	font-size:1em;
+}
+/*---------------CSS Select location-------------*/
+#location
+{
+	margin :0px;
+    margin-left:30%;
+
+}
+#nb
+{
+	margin-left:30%;
+	font-size:1em;
+}
+
+
+/*---------------CSS Button-------------*/
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size:15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/*---------------CSS Find Chefs-------------*/
+#submitButton
+{
+    margin-left:30%;
+    margin-bottom:2%;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #4CAF50;
+}
+/*---------------CSS Display Chefs-------------*/
+.sellerProfileContainer
+{
+	margin:50px;
+	margin-left:25%;
+	height:150px;
+    width:500px;
+    border: 1px solid gray;
+    border-radius:7px;
+    box-shadow:0px 0px 5px #888888;
+    cursor:pointer;
+
+    /*background:gray;*/
+}
+.sellerImg
+{
+	float:left;
+    width:30%;
+    height:100%;
+     background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+    border-top-left-radius:7px;
+    border-bottom-left-radius:7px;
+
+
+}
+
+.details
+{
+
+	float:left;
+    width: 70%;
+    height:100%;
+  background:#F8F8FF;
+   border-top-right-radius:7px;
+   border-bottom-right-radius:7px;
+    /* background-image: url("https://i2.wp.com/sanctuaryphiladelphia.org/wp-content/uploads/2016/02/Silver-Blur-Background-e1455576248201.jpg?fit=1600%2C900"); */
+
+}
+
+.sellerID
+{
+	padding-top:10px;
+	padding-left:30px;
+	height:30%;
+    font-weight:bold;
+    /*background:red;*/
+}
+.foodCategories
+{
+	padding-left:30px;
+	height:70%;
+  font-weight:100;
+  font-size:14px;
+  color:gray;
+    /*background: yellow;*/
+}
+/*-----CSS Sign in-----*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+</style>
+
+</head>
+<!--***********-START BODY-****************-->
+<body >
+
+<!----------------Top bar------------------->
+<div id='topbar'>
+	<div id='hoofoo'> <a href="#">Hoofoo</a>
+    </div>
+
+    <div id='cart'> <a href="#">Cart</a>
+    </div>
+
+    <div id='user' onclick="document.getElementById('id01').style.display='block'"> <a href="#">alex95</a>
+    </div>
+
+</div>
+
+<!----------------Header------------------->
+<div class="header" >
+  	<div >
+      <h1 style="color:white">Homemade Food Discovery</h1>
+    </div>
+    <div>
+      <h3 style="color:white" > Freshly delivered to you </h3>
+    </div>
+
+
+</div>
+<!---------------Select categories------------------->
+<div id="categories">
+    <h3> What do you feel like eating? </h3>
+</div>
+    <select id="ctg" name="categories">
+    <option value="Anything">Anything</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Greek">Greek</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Italian">Italian</option>
+      <option value="Thai">Thai</option>
+      <option value="Mexican">Mexican</option>
+
+    </select>
+    <br><br>
+
+
+
+<!----------------Select address------------------->
+<div id="location">
+    <h3> Tell us where you live! </h3>
+</div>
+    <select id="nb" name="neighbourhood">
+    <option value="Anywhere">Anywhere</option>
+      <option value="Ahuntsic-Cartierville">Ahuntsic-Cartierville</option>
+      <option value="Côte-des-Neiges–Notre-Dame-de-Grâce">Côte-des-Neiges–Notre-Dame-de-Grâce</option>
+      <option value="Lachine">Lachine</option>
+      <option value="Le Plateau-Mont-Royal">Le Plateau-Mont-Royal</option>
+      <option value="Mercier–Hochelaga-Maisonneuve">Mercier–Hochelaga-Maisonneuve</option>
+      <option value="Outremont">Outremont</option>
+      <option value="Rosemont–La Petite-Patrie">Rosemont–La Petite-Patrie</option>
+      <option value="Saint-Laurent">Saint-Laurent</option>
+      <option value="Verdun">Verdun</option>
+      <option value="Ville-Marie">Ville-Marie</option>
+      <option value="West Island">West Island</option>
+      <option value="Westmount">Westmount</option>
+    </select>
+    <br><br>
+
+<!---------------Find Chefs button------------------->
+    <button class='button' id='submitButton' type="submit" value="Find Chefs!" onclick="displaySellers()">Find Chefs </button>
+
+<!---------------Display  sellers-------------------
+<div class='sellerProfileContainer'>
+	<div class='sellerImg'>
+    </div>
+
+    <div class='details'>
+    	<div class='sellerID'>
+        	Polypoly95
+        </div>
+        <div class='foodCategories'>
+        	Beef - Chicken
+        </div>
+    </div>
+</div>
+<!---------------Display  sellers-------------------
+<div class='sellerProfileContainer'>
+	<div class='sellerImg'>
+    </div>
+
+    <div class='details'>
+    	<div class='sellerID'>
+        	SinjinCute
+        </div>
+        <div class='foodCategories'>
+        	Chicken
+        </div>
+    </div>
+</div>
+
+
+<!-------------------Signin------------------>
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+</body>
+
+<script>
+
+
+
+var sellers = [ {name:"JimmyChang123",img:"../pics/chinese.jpg",neighbour:"Verdun",Tags:["Greek","Chinese","Italian"]},
+{name:"ZMaruoZ",img:"../pics/inter.jpg",neighbour:"Verdun",Tags:["Chinese","Japanese","Greek"]},
+{name:"JimmyWong",img:"../pics/chinese2.jpg",neighbour:"Lachine",Tags:["Chinese"]},
+{name:"Kei94",img:"../pics/italian1.jpg",neighbour:"Lachine",Tags:["Italian"]},
+{name:"holacomoestas",img:"../pics/italian2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Italian","Greek","Japanese","Mexican"]},
+{name:"Polypoly95",img:"../pics/international.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Greek"]},
+{name:"SinjinCute",img:"../pics/greekchi.jpg",neighbour:"Verdun",Tags:["Greek","Chinese","Thai","Japanese","Mexican","Italian"]},
+{name:"Maruo",img:"../pics/chithai.jpg",neighbour:"Verdun",Tags:["Chinese"]},
+{name:"kimjong-un",img:"../pics/jap.jpg",neighbour:"Lachine",Tags:["Chinese","Japanese"]},
+{name:"timetoeat",img:"../pics/inter2.jpg",neighbour:"Outremont",Tags:["Italian","Japanese","Greek"]},
+{name:"Connor87",img:"../pics/japchi.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Japanese"]},
+{name:"rogerFederer",img:"../pics/greek2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Greek","Japanese"]},
+{name:"longliveking",img:"../pics/greekchi2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Chinese","Greek"]},
+{name:"easy1992",img:"../pics/thai2.jpg",neighbour:"Lachine",Tags:["Thai"]},
+{name:"rafanadal",img:"../pics/thai.jpg",neighbour:"Verdun",Tags:["Thai","Mexican"]},
+{name:"olala",img:"../pics/mexican2.jpg",neighbour:"Ahuntsic-Cartierville",Tags:["Thai","Mexican"]}
+
+
+];
+
+var notFoundContainer = document.createElement('div');
+notFoundContainer.className = 'notFound';
+
+var notFound = document.createElement('div');
+notFound.className = 'notFound';
+notFound.style.height = '40px';
+notFound.style.width = '40px';
+notFound.style.marginLeft = '30%';
+
+notFound.style.marginBottom = '5%';
+notFound.style.background = 'gray';
+notFound.style.background = "url('http://www.myiconfinder.com/uploads/iconsets/256-256-8125e33177d0c567baadf39ffac8ec29-depression.png')";
+notFound.style.backgroundSize = 'cover';
+notFound.style.backgroundSize = 'contain';
+notFound.style.backgroundRepeat = 'no-repeat';
+notFound.style.backgroundPosition = '50% 50%';
+notFound.style.float = 'left';
+var notFoundMess = document.createElement('div');
+notFoundMess.className = 'notFound';
+notFoundMess.innerHTML = 'Sorry, no results found';
+notFoundMess.style.float = 'left';
+notFoundMess.style.marginTop = '10px';
+notFoundMess.style.marginLeft = '30px';
+notFoundMess.style.color = '#FBD971';
+notFoundContainer.appendChild(notFound);
+notFoundContainer.appendChild(notFoundMess);
+
+
+
+
+
+
+/*displaySellers when click on Find chefs*/
+function displaySellers()
+{
+
+	var numProfiles = 0;
+
+
+
+
+    /*remove from screen all sellers of previous address */
+    removeElementsByClass('sellerProfileContainer');
+
+    /*get neighbour after click submit and assign it to currentNeighbour*/
+    var anyNeighbour = false;
+    var anyFoodType = false;
+    selectedNeighbour = document.getElementById('nb').value;
+    selectedFoodType = document.getElementById('ctg').value;
+    if(selectedNeighbour == 'Anywhere') anyNeighbour = true;
+    if(selectedFoodType == 'Anything') anyFoodType = true;
+
+
+    /*look through sellers to see which ones have the same address as currentNeighbour and then display them on the screen (by creating divs)*/
+    for(var i=0;i<sellers.length;i++)
+    {
+
+      if(sellers[i].neighbour == selectedNeighbour || anyNeighbour )
+      {
+      if(sellers[i].Tags.includes(selectedFoodType) || anyFoodType)
+      {
+	  numProfiles++;
+      var divContainer = document.createElement('div');
+      divContainer.className = 'sellerProfileContainer';
+      divContainer.onclick= function()
+      {
+      location.href='sellerPageBuyerView.html';
+
+      }
+
+       document.getElementsByTagName("body")[0].appendChild(divContainer);
+
+
+      var divSellerImg = document.createElement('div');
+      divSellerImg.className = 'sellerImg';
+      divSellerImg.style.backgroundImage='url('+sellers[i].img+')';
+
+
+       divContainer.appendChild(divSellerImg);
+
+
+       var divDetails = document.createElement('div');
+      divDetails.className = 'details';
+
+       divContainer.appendChild(divDetails);
+
+        var divSellerID = document.createElement('div');
+      divSellerID.className = 'sellerID';
+      divSellerID.innerHTML = sellers[i].name;
+
+       divDetails.appendChild(divSellerID);
+
+       var divFoodCTG = document.createElement('div');
+      divFoodCTG.className = 'foodCategories';
+      divFoodCTG.innerHTML = sellers[i].Tags;
+
+       divDetails.appendChild(divFoodCTG);
+       }
+       }
+     }
+
+     /*if there's no seller of that neighbour, display notFound message*/
+     if(numProfiles == 0) {document.getElementsByTagName('body')[0].appendChild(notFoundContainer);}
+    else
+    {
+    	removeElementsByClass('notFound');
+    }
+
+}
+
+/*Function remove all elements by Class name*/
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+   elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+
+</script>
+
+
+</html>
