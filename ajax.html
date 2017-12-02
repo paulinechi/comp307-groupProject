@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head> st 
+<button id="btn"> click </button>>
+</head>
+
+<body> 
+  
+  <form action="api/menu/add" method="post"> 
+	 dish name: <input type="text" name="dish_name"><br>
+	 dish price: <input type="text" name="dish_price"><br>
+   dish pic: <input type="text" name="dish_pic">
+   <input type="submit" value="Submit">
+  </form> 
+
+  <div id="info">  </div>
+
+  <script language="javascript" type="text/javascript">
+    
+    var container = document.getElementById("info");
+    var btn = document.getElementById("btn");
+  
+    btn.addEventListener("click", function(){
+        var ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET','http://localhost/mySlim/public/api/menu/ant');
+        
+        ourRequest.onload = function(){
+          var ourData = JSON.parse(ourRequest.responseText);
+          renderHTML(ourData);
+        }
+        ourRequest.send();
+    });
+    function renderHTML(data)
+    { 
+      var data0 = data[2].dish_name;
+      var dataString = JSON.stringify(data0);
+      container.insertAdjacentHTML('beforeend',dataString);
+    }
+  
+  
+    </script>
+
+
+</body> 
+</html>
