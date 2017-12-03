@@ -1,0 +1,1193 @@
+<html>
+
+<head>
+
+<title>Homemade food</title>
+<meta charset="utf-8">
+<style>
+
+body {    
+background:url("back.jpg");
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%; 
+}
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*-------CSS Top bar (Hoofoo,User,Cart)----------*/
+#topbar
+{
+	
+	height:40px;
+	/*background-color:#16A085;*/
+    margin-bottom:5px;
+    box-sizing:border-box;
+}
+
+#topbar a
+{
+	text-decoration: none;
+    color:white;
+	font-weight:bold;
+}
+
+#hoofoo
+{
+	float:left;
+    height:100%;
+	/*background:gray;*/
+	float:left;
+    padding:15px;
+    box-sizing:border-box;
+}
+
+#user
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+    
+    /*border-right: 2px solid #4B77BE;*/
+    
+    
+}
+
+#cart
+{
+	height:100%;
+	/*background:gray;*/
+	float:right;
+    padding:15px;
+    box-sizing:border-box;
+    margin-right:20px;
+}
+
+/*-------------------CSS HEADER---------------------*/
+
+.header 
+{
+        	
+  	padding: 100px;
+    text-align: center;
+    font-family: Helvetica;
+    overflow:hidden;
+    position:relative;
+    background-image: url("homeImg.jpeg");
+    font-size:1.2em;
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+}
+/*---------------CSS Select Categories-----------*/
+#categories
+{
+    padding-top:20px;
+    
+    
+    margin-left:30%;
+    
+}
+#ctg
+{
+	margin-left:30%;
+	font-size:1em;
+}
+/*---------------CSS Select location-------------*/
+#location
+{
+	margin :0px;
+    margin-left:30%;
+    
+}
+#nb
+{
+	margin-left:30%;
+	font-size:1em;
+}
+
+
+/*---------------CSS Button-------------*/
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size:15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/*---------------CSS Find Chefs-------------*/
+#submitButton
+{
+    margin-left:30%;
+    margin-bottom:2%;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #4CAF50;
+}
+/*---------------CSS Display Chefs-------------*/
+.sellerProfileContainer
+{
+	margin:50px;
+	margin-left:25%;
+	height:150px;
+    width:500px;
+    border: 1px solid gray;
+    border-radius:7px;
+    box-shadow:0px 0px 5px #888888;
+    cursor:pointer;
+    
+    /*background:gray;*/
+}
+.sellerImg
+{
+	float:left;
+    width:30%;
+    height:100%;
+     background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+    border-top-left-radius:7px;
+    border-bottom-left-radius:7px;
+   
+    
+}
+
+.details
+{
+	
+	float:left;
+    width: 70%;
+    height:100%;
+  background:#F8F8FF;
+   border-top-right-radius:7px;
+   border-bottom-right-radius:7px;
+    /*background-image: url("https://i2.wp.com/sanctuaryphiladelphia.org/wp-content/uploads/2016/02/Silver-Blur-Background-e1455576248201.jpg?fit=1600%2C900");*/
+    
+}
+
+.sellerID
+{
+	padding-top:10px;
+	padding-left:30px;
+	height:30%;
+    font-weight:bold;
+    /*background:red;*/
+}
+.foodCategories
+{
+	padding-left:30px;
+	height:70%;
+  font-weight:100;
+  font-size:14px;
+  color:gray;
+    /*background: yellow;*/
+}
+/*-----CSS Sign in-----*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/*CSS P2*/
+
+
+
+/*---------------CSS Button-------------*/
+
+
+#postComment
+{
+	
+	
+	width:100px;
+    
+}
+
+/*-------CSS Seller profile header----------*/
+
+.sellerProfileContainer2
+{
+	box-sizing: border-box;
+    
+	margin:50px;
+    margin-top:10px;
+	width:100%;
+    height:220px;
+	border: 1px solid #EDEDED;
+    
+}
+
+  .profilePic
+  {
+    width: 20%;
+    height:100%;
+    box-sizing: border-box;
+  background:url("greekchi.jpg");
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position : 50% 50%;
+    
+    float:left;
+  }
+  
+  .sellerDetails
+  {
+  
+ 	/*background:white;*/
+  padding:10px;
+  font-size:16px;
+ 
+  width: 80%;
+  height:100%;
+  
+  float:left;
+  box-sizing: border-box;
+  }
+
+  #sellerName
+  {
+  font-size:20px;
+  	margin:5px;
+    font-weight:bold;
+    box-sizing: border-box;
+  }
+  #sellerFoodType
+  {
+ 
+	
+  font-weight:100;
+  font-size:16px;
+  color:gray;
+  margin:5px;
+  box-sizing: border-box;
+  }
+  #sellerAddress
+  {
+  
+  margin:5px;
+  box-sizing: border-box;
+  }
+  #rating
+  {
+  margin:5px;
+  box-sizing: border-box;
+  }
+  
+ 
+ /*------CSS Stars------*/
+ 
+ span {
+ color:#FD4;
+  content: "\2605";
+}
+ div.stars {
+ 
+ 
+  width: 300px;
+  
+}
+
+input.star { display: none; }
+
+label.star {
+
+
+  float: right;
+  padding: 1px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+  
+}
+
+input.star:checked ~ label.star:before {
+  content: '\2605';
+  color: #FD4;
+  transition: all .25s;
+}
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\2605';
+}
+ 
+/*-------CSS Menu----------*/  
+.menu
+{
+  letter-spacing:3px;
+  margin-left: 40px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  font-size:30px;
+ 
+}
+/*-------CSS Dish----------*/  
+.dishesContainer
+{
+
+  font-size:15px;
+	height:366px;
+
+}
+  
+.block
+{
+  margin-top:30px;
+  margin-bottom:30px;
+  margin-left:40px;
+  width: 270px;
+  height: 100%;
+  float: left;
+  background:blue;
+ 
+    
+}
+
+.dishImg
+{
+  width:100%;
+  height:58%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+}
+
+    
+.info
+{
+	height:45%;
+    background:#EDEDED;
+  
+}
+
+
+.namePrice
+{
+   letter-spacing: 1px;
+    padding-top:11%;
+    box-sizing: border-box;
+    
+    width:100%;
+    height:30%;
+    
+}
+
+.nameDish
+{
+
+  color:#E67864;
+  font-weight:bold;
+  padding-LEFT:8%;
+  width:75%;
+  box-sizing: border-box;
+  height:100%;
+
+  float:left;
+  
+}
+ 
+.priceDish
+{
+   box-sizing: border-box;
+  border-left:2.5px solid #DEDEDE;
+  text-align:center;
+  margin-left:75%;
+  width:25%;
+  height:100%;
+ 
+}
+.ingredient
+{
+
+  padding-top:2%;
+  padding-left:8%;
+  padding-right:10%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  height:30%;
+  
+
+}
+.addCartButton
+{
+  font-size:12px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+ 
+  padding:3%;
+  padding-left:3%;
+  padding-right:3%;
+  display: inline-block;
+ 
+  margin-left:9%;
+  margin-top:5%;
+  height:auto;
+  width:auto;
+  background:#E67864;
+ 
+  letter-spacing: 1.7px;
+ 
+}
+
+/*------CSS addtocart pop up-----*/
+#addCartContainer {
+	display:block;
+	position: fixed;
+  top: 30%;
+  left: 40%;
+ 
+	width:205px;
+    height:50px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 30px 10px;
+    z-index: 1002;
+}
+input[type=submit] {
+    width: 70px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 15px;
+    margin-left:10px;
+    margin-right:20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.black_overlay {
+	
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 4000px;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+/*-----CSS Comment-------*/
+.comment
+{
+	padding:50px;
+    padding-bottom:20px;
+	
+	clear:both;
+}
+.textbox
+{	
+	margin:50px;
+    margin-top:0px;
+    font-size:15px;
+}
+
+.com
+{
+	background:white;
+    width:550px;
+    
+    margin:50px;
+    padding:20px;
+    margin-bottom:0px;
+    margin-top:0px;
+}
+#postComment
+{
+	
+	margin:50px;
+    margin-top:0px;
+}
+
+
+
+</style>
+
+</head>
+<!--***********-START BODY-****************-->
+<body >
+
+<!----------------Top bar------------------->
+<div id='topbar'>
+	<div id='hoofoo' onclick="document.getElementById('p1').style.display='block';document.getElementById('p2').style.display='none'"> <a href="#">Hoofoo</a>
+    </div>
+    
+    <div id='cart'> <a href="#">Register</a>
+    </div>
+    
+    <div id='user'> <a href="login">Log in</a>
+    </div>
+
+</div>
+<div id='p1'>
+<!----------------Header------------------->
+<div class="header" >
+  	<div >
+      <h1 style="color:white">Homemade Food Discovery</h1>
+    </div>
+    <div>
+      <h3 style="color:white" > Freshly prepared for you </h3>
+    </div>
+            
+            
+</div>
+<!---------------Select categories------------------->
+<div id="categories">
+    <h3> What do you feel like eating? </h3>
+</div>
+    <select id="ctg" name="categories">
+    <option value="Anything">Anything</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Greek">Greek</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Italian">Italian</option>
+      <option value="Thai">Thai</option>
+      <option value="Mexican">Mexican</option>
+      
+    </select>
+    <br><br>
+
+
+
+<!----------------Select address------------------->
+<div id="location">
+    <h3> Tell us where you live! </h3>
+</div>
+    <select id="nb" name="neighbourhood">
+    <option value="Anywhere">Anywhere</option>
+      <option value="Ahuntsic-Cartierville">Ahuntsic-Cartierville</option>
+      <option value="Côte-des-Neiges–Notre-Dame-de-Grâce">Côte-des-Neiges–Notre-Dame-de-Grâce</option>
+      <option value="Lachine">Lachine</option>
+      <option value="Le Plateau-Mont-Royal">Le Plateau-Mont-Royal</option>
+      <option value="Mercier–Hochelaga-Maisonneuve">Mercier–Hochelaga-Maisonneuve</option>
+      <option value="Outremont">Outremont</option>
+      <option value="Rosemont–La Petite-Patrie">Rosemont–La Petite-Patrie</option>
+      <option value="Saint-Laurent">Saint-Laurent</option>
+      <option value="Verdun">Verdun</option>
+      <option value="Ville-Marie">Ville-Marie</option>
+      <option value="West Island">West Island</option>
+      <option value="Westmount">Westmount</option>
+    </select>
+    <br><br>
+    
+<!---------------Find Chefs button------------------->    
+    <button class='button' id='submitButton' type="submit" value="Find Chefs!" onclick="displaySellers()">Find Chefs </button>
+
+<!---------------Display  sellers-------------------
+<div class='sellerProfileContainer'>
+	<div class='sellerImg'> 
+    </div>
+    
+    <div class='details'>
+    	<div class='sellerID'>
+        	Polypoly95
+        </div>
+        <div class='foodCategories'>
+        	Beef - Chicken
+        </div>
+    </div>
+</div>
+<!---------------Display  sellers-------------------
+<div class='sellerProfileContainer'>
+	<div class='sellerImg'> 
+    </div>
+    
+    <div class='details'>
+    	<div class='sellerID'>
+        	SinjinCute
+        </div>
+        <div class='foodCategories'>
+        	Chicken
+        </div>
+    </div>
+</div>
+
+
+<!-------------------Signin------------------>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+     
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+</div>
+
+
+
+<!----P2----->
+<div id='p2'>
+<div id="fade" class="black_overlay"></div>
+<div id='addCartContainer'>
+
+	<div class='fieldName' style="margin-left:20px;font-weight:bold">Add to cart?</div>
+    
+    <div style="display:inline-block">
+     <input type="submit" value="Yes" onclick='addCart()'>
+     <input  style="background:red"type="submit" value="Cancel" onclick='showHideAddCartContainer()'>
+     </div>
+     </div>
+
+
+
+
+<!-------------Seller profile header------------------->
+<div class="sellerProfileContainer2">
+  <div class=profilePic>
+  </div>
+  
+  <div class='sellerDetails'>
+  	<div id='sellerName'>
+    </div>
+    <div id='sellerFoodType'> 
+    </div>
+    <div id='sellerAddress'> 
+    </div>
+    <div id='rating'> Overall rating: <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+    </div>
+   
+   
+    <div class="stars">
+      <form action="">
+        <input class="star star-5" id="star-5" type="radio" name="star"/>
+        <label class="star star-5" for="star-5"style="margin-right:110px"></label>
+        <input class="star star-4" id="star-4" type="radio" name="star"/>
+        <label class="star star-4" for="star-4"></label>
+        <input class="star star-3" id="star-3" type="radio" name="star"/>
+        <label class="star star-3" for="star-3"></label>
+        <input class="star star-2" id="star-2" type="radio" name="star"/>
+        <label class="star star-2" for="star-2"></label>
+        <input class="star star-1" id="star-1" type="radio" name="star"/>
+        <label class="star star-1" for="star-1" ></label>
+      </form>
+
+
+    </div>
+  	
+  </div>
+
+</div>
+<!----Rating stars---->
+
+
+<!-------------Our menu------------------>
+<div class="menu"> Our menu </div>
+<div class='dishesContainer'></div>
+
+
+
+</div>
+
+
+<!-------------Comments-----------------
+<div class='com' id='com1'>Food is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesome!<br>Sinjin</div>
+<div class='com' id='com2'>Food is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesomeFood is awesome!<br>Sernin</div>-->
+
+
+</body>
+
+<script>
+window.onhashchange = function() {
+ //blah blah blah
+ alert('s');
+}
+var p2 = document.getElementById('p2');
+p2.style.display = 'none';
+var p1 = document.getElementById('p1');
+
+
+  /*if (performance.navigation.type == 1) {
+  	if(p1.style.display == 'block' && p2.style.display == 'hidden') p1.style.display = 'block';
+    else if(p1.style.display == 'hidden' && p2.style.display == 'block') p2.style.display = 'block';
+   
+ }
+*/
+
+
+
+//////////
+var sellers = [{
+    "result": 
+    {
+        "cuisine_types": ["Chinese","African","Mexican","Japanese"],
+        "dishes": [
+            {
+                "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "nishi.jpg",
+                "dish_price": 3
+            },
+            {
+               "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "friedChicken.jpg",
+                "dish_price": 3
+            },
+            {
+                "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "steak.jpg",
+                "dish_price": 3
+            }
+        ],
+        "location": "Verdun",
+        "menu": [16,17,18],
+        "owner_name": "Natsu, Fire Dragon Slayer",
+        "restaurant_image": "greek2.jpg",
+        "restaurant_name": "Fire Ball",
+        "username": "Natsu"
+    }
+    },
+{"result": 
+	{
+        "cuisine_types": ["Chinese","African","Mexican","Japanese"],
+        "dishes": [
+            {
+                "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "sushi.jpg",
+                "dish_price": 3
+            },
+            {
+               "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "pizza.jpg",
+                "dish_price": 3
+            },
+            {
+                "dish_ingredients":["Rice","Kelp","Seasoning"],
+                "dish_name": "Onigiri",
+                "dish_pic": "saumon.jpg",
+                "dish_price": 3
+            }
+        ],
+        "location": "Lachine",
+        "menu": [16,17,18],
+        "owner_name": "Natsu, Fire Dragon Slayer",
+        "restaurant_image": "jap.jpg",
+        "restaurant_name": "Fire Ball",
+        "username": "Natsu"
+    }
+
+}
+];
+
+
+///////
+
+
+var notFoundContainer = document.createElement('div');
+notFoundContainer.className = 'notFound';
+
+var notFound = document.createElement('div');
+notFound.className = 'notFound';
+notFound.style.height = '40px';
+notFound.style.width = '40px';
+notFound.style.marginLeft = '30%';
+
+notFound.style.marginBottom = '5%';
+notFound.style.background = 'gray';
+notFound.style.background = "url('http://www.myiconfinder.com/uploads/iconsets/256-256-8125e33177d0c567baadf39ffac8ec29-depression.png')";
+notFound.style.backgroundSize = 'cover';
+notFound.style.backgroundSize = 'contain';
+notFound.style.backgroundRepeat = 'no-repeat';
+notFound.style.backgroundPosition = '50% 50%';
+notFound.style.float = 'left';
+var notFoundMess = document.createElement('div');
+notFoundMess.className = 'notFound';
+notFoundMess.innerHTML = 'Sorry, no results found';
+notFoundMess.style.float = 'left';
+notFoundMess.style.marginTop = '10px';
+notFoundMess.style.marginLeft = '30px';
+notFoundMess.style.color = '#FBD971';
+notFoundContainer.appendChild(notFound);
+notFoundContainer.appendChild(notFoundMess);
+
+
+
+
+var id = 0;
+var idselected=-1;
+
+/*displaySellers when click on Find chefs*/
+function displaySellers()
+{
+
+	var numProfiles = 0;
+   
+    
+     
+
+    /*remove from screen all sellers of previous address */
+    removeElementsByClass('sellerProfileContainer');
+    
+    /*get neighbour after click submit and assign it to currentNeighbour*/
+    var anyNeighbour = false;
+    var anyFoodType = false;
+    selectedNeighbour = document.getElementById('nb').value;
+    selectedFoodType = document.getElementById('ctg').value;
+    if(selectedNeighbour == 'Anywhere') anyNeighbour = true;
+    if(selectedFoodType == 'Anything') anyFoodType = true;
+    
+    
+    /*look through sellers to see which ones have the same address as currentNeighbour and then display them on the screen (by creating divs)*/ 
+    for(var i=0;i<sellers.length;i++)
+    {
+    	
+      if(sellers[i].result.location == selectedNeighbour || anyNeighbour )
+      {
+      if(sellers[i].result.cuisine_types.includes(selectedFoodType) || anyFoodType)
+      {
+	  numProfiles++;
+      var divContainer = document.createElement('div');
+      divContainer.className = 'sellerProfileContainer';
+      divContainer.id = id;
+      divContainer.onclick= function()
+      {
+
+      idselected = this.id;
+       displaySellerPage();
+
+     	
+      }
+
+       p1.appendChild(divContainer);
+
+
+      var divSellerImg = document.createElement('div');
+      divSellerImg.className = 'sellerImg';
+      divSellerImg.style.backgroundImage='url('+sellers[i].result.restaurant_image+')';
+      
+
+       divContainer.appendChild(divSellerImg);
+
+
+       var divDetails = document.createElement('div');
+      divDetails.className = 'details';
+
+       divContainer.appendChild(divDetails);
+
+        var divSellerID = document.createElement('div');
+      divSellerID.className = 'sellerID';
+      divSellerID.innerHTML = sellers[i].result.username;
+
+       divDetails.appendChild(divSellerID);
+
+       var divFoodCTG = document.createElement('div');
+      divFoodCTG.className = 'foodCategories';
+      divFoodCTG.innerHTML = sellers[i].result.cuisine_types;
+
+       divDetails.appendChild(divFoodCTG);
+       }
+       }
+       
+       id++;
+     }
+     
+     /*if there's no seller of that neighbour, display notFound message*/
+     if(numProfiles == 0) {p1.appendChild(notFoundContainer);}
+    else
+    {
+    	removeElementsByClass('notFound');
+    }
+
+}
+
+/*Function remove all elements by Class name*/
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+   elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//alert('s');
+
+
+
+    
+    
+
+
+
+document.getElementById('addCartContainer').style.display = 'none';
+
+
+var numOfDishes = 0;
+var boughtItem = 0;
+
+var dishesContainer = document.getElementsByClassName('dishesContainer')[0];
+
+
+
+function displaySellerPage()
+{	
+//location.reload();
+	/*display seller header first*/
+    p1.style.display = 'none';
+       p2.style.display = 'block';
+       
+       
+   
+       //display seller header
+       
+       document.getElementById('sellerName').innerHTML = sellers[idselected].result.username;
+document.getElementById('sellerFoodType').innerHTML =sellers[idselected].result.cuisine_types;
+document.getElementById('sellerAddress').innerHTML=sellers[idselected].result.location;
+
+	/*then add dishes of that seller*/
+
+	for(var i=0;i<sellers[idselected].result.dishes.length;i++)
+    {
+	//block (block < parentDiv); needs ID and Class (ID,C)
+	var block = document.createElement('div');
+    block.className = 'block';
+   
+    block.id = 'block'+''+numOfDishes;
+    //alert(block.id);
+    
+    
+    
+   	var dishImg = document.createElement('div');
+    block.appendChild(dishImg);
+   	dishImg.className = 'dishImg';
+    dishImg.id = 'dishImg' + numOfDishes;
+    dishImg.style.backgroundImage = "url("+sellers[idselected].result.dishes[i].dish_pic+")";
+    
+     
+    var info = document.createElement('div');
+    info.className = "info";
+    block.appendChild(info);
+   
+     
+    var namePrice = document.createElement('div');
+    namePrice.className = "namePrice";
+    
+
+    info.appendChild(namePrice);
+    
+    //namePrice (C)  (nameDish(C,ID) + priceDish(C,ID))
+    var nameDish = document.createElement('div');
+    nameDish.className = "nameDish";
+    nameDish.id = 'nameDish'+numOfDishes;
+    
+    nameDish.innerHTML = sellers[idselected].result.dishes[i].dish_name;
+    
+    //C,ID
+    var priceDish = document.createElement('div');
+    priceDish.className = "priceDish";
+    priceDish.id = 'priceDish'+numOfDishes;
+    priceDish.innerHTML = '$'+sellers[idselected].result.dishes[i].dish_price;
+    
+    namePrice.appendChild(nameDish);
+    namePrice.appendChild(priceDish);
+    
+  
+  	//C,ID
+    var ingredient = document.createElement('div');
+    ingredient.className = "ingredient";
+    ingredient.id = 'ingredient'+numOfDishes;
+    ingredient.innerHTML = sellers[idselected].result.dishes[i].dish_ingredients;
+    info.appendChild(ingredient);
+    
+    //C,ID
+    var addCartButton = document.createElement('div');
+    addCartButton.className = "addCartButton";
+    addCartButton.id = 'addCartButton'+numOfDishes;
+    addCartButton.innerHTML = 'ORDER NOW';
+     info.appendChild(addCartButton);
+     
+     addCartButton.onclick = function()
+     {
+     	showHideAddCartContainer()
+        
+     }
+  
+  	var prevDish=document.getElementById('block'+(numOfDishes-1));
+    dishesContainer.insertBefore(block,prevDish);
+    
+    numOfDishes++;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+function showHideAddCartContainer()
+{
+
+if(document.getElementById('addCartContainer').style.display == 'block')
+{
+ document.getElementById('fade').style.display = 'none';	document.getElementById('addCartContainer').style.display = 'none';
+ }
+ 
+ else
+ {
+ 	document.getElementById('fade').style.display = 'block';	document.getElementById('addCartContainer').style.display = 'block';
+ }
+}
+
+
+function addCart()
+{
+showHideAddCartContainer();
+document.getElementById('addCartContainer').style.display = 'none';	document.getElementById('numItems').innerHTML = boughtItem+1;
+        boughtItem++;
+}
+  
+
+
+
+
+</script>
+
+
+</html>
