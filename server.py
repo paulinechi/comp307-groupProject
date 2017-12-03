@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from tinydb import TinyDB, Query
 from pprint import pprint
 import json
@@ -9,6 +9,7 @@ restaurants = db.table('restaurants')
 dishes = db.table('dishes')
 
 app = Flask(__name__)
+app.debug = True
 
 '''
 DB functions
@@ -113,10 +114,15 @@ def jay():
 
 @app.route('/api/findChefs', methods=['POST'])
 def route_findChefs():
-    body = request.get_json()
+    body = request.get_json(force=True)
+    print(body)
     cuisine_type = body['cuisine_type']
     location = body['location']
-    return jsonify({'result': findChefs(cuisine_type, location)})
+    # return jsonify({'result': findChefs(cuisine_type, location)})
+    json_result = json.dumps({'result': findChefs(cuisine_type, location)})
+    resp = Response(response=json_result, status=200, mimetype='application/json')
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
     # return "Found chefs!"
 
 @app.route('/api/retrieveDishes', methods=['GET'])
@@ -221,14 +227,32 @@ def add_numbers():
 Test Endpoints
 '''
 
+@app.route('/test/returnHello', methods=['GET'])
+def test_returnHello():
+    resp = Response("Hello")
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+    # return "Hello Bye"
+    # return jsonify({'result' : 'hello'})
+
 @app.route('/test/returnAllUsers', methods=['GET'])
 def test_returnAllUsers():
-    print("Returned!")
-    print(returnAllUsers())
-    # return jsonify({'result' : returnAllUsers()})
-    d = {'result' : returnAllUsers()}
-    print(d)
-    return str(d)
+    # print("Returned!")
+    # print(returnAllUsers())
+    # return jsonify({'result': returnAllUsers()})
+    # json_result = jsonify({'result' : returnAllUsers()})
+    json_result = json.dumps({'result': returnAllUsers()})
+    # print(json_result)
+    # return ""
+
+    resp = Response(response=json_result, status=200, mimetype='application/json')
+    # resp = Response({"name":"Abhijay"}, content_type=json)
+    # resp = Response(str(json_result))
+    # resp = Response(json_result)
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    # print(resp)
+    return resp
+
 
 @app.route('/test/returnAllDishes', methods=['GET'])
 def test_returnAllDishes():
@@ -249,3 +273,11 @@ def test_returnAllRestaurants():
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+
+# @app.route('/articles_list/contents/')
+# def json_contents():
+#     response = make_response(jsonify(response=get_articles(ARTICLES_NAME)))    response.headers['Access-Control-Allow-Origin'] = '*'
+#     response.headers['Access-Control-Allow-Methods'] = 'POST'
+#     response.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+#     return response
